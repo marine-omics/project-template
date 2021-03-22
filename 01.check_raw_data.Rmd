@@ -1,0 +1,46 @@
+---
+title: "Check Raw Data"
+output: github_document
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8,
+                      echo=FALSE, warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(cache=FALSE)
+options(width = 60)
+library(tidyverse)
+```
+
+For example we might have a DNA sequencing project.  One thing we could do is check for contamination with organisms other than our target organism.  To do this we could use the software, kraken which we would run on the HPC.  The outputs of that will be in `hpc/kraken/kraken-report.mpa`
+
+```{r}
+# Read in the raw data
+
+kraken_mpa_files <- list.files("hpc/kraken/",pattern = "*.mpa",full.names = TRUE)
+
+read_mpa <- function(path){
+  s <- basename(path) %>% str_extract("[^\\.]+")
+  sample_group <- s %>% str_extract("[^\\-]+")
+  mpa_data <- read_tsv(path,col_names = c("taxonomy","read_count"),col_types = cols()) %>% 
+    add_column(sample=s) %>% 
+    add_column(sample_group=sample_group)
+}
+
+kraken_mpa_data <- kraken_mpa_files %>% 
+  map_df(read_mpa) %>% 
+  rbind() %>% 
+  mutate(lowest_taxon = str_extract(taxonomy,"[^\\|]*$")) %>% 
+  separate(lowest_taxon,c("level","taxon"),sep = '__', remove=FALSE)
+```
+
+One thing we might be concerned with is bacterial contamination, which often happens at the sequencing centre.  We can plot the number of bacterial classified reads per/sample to see if there are any with especially high levels.
+
+```{r}
+# We don't really need a comment here. The intent is obvious.
+kraken_mpa_data %>% 
+  filter(taxon=="Bacteria") %>% 
+  ggplot(aes(x=sample,y=read_count)) + 
+  geom_col(aes(fill=sample_group)) + coord_flip()
+
+ggsave("figures/kraken_summary.png")
+```
