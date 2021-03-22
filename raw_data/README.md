@@ -1,12 +1,11 @@
 # Raw Data
 
-This directory is for analysis ready files that we treat as raw data for the purpose of R analysis.  For example RNA-seq counts files or `proteinGroups.txt` files fall in this category.  They should not be checked in to git but this readme should provide details of how to get them.  For example, in a code block like this;
+This directory is for analysis ready files that we treat as raw data for the purpose of R analysis.  
 
-`proteinGroups.txt` can be obtained as follows;
+Examples of data that belongs here are;
 
-```bash
-	wget https://www.dropbox.com/s/dsnp6cmn/proteinGroups.txt?dl=0 -O proteinGroups.txt
-```
+- Manually curated metadata about your samples (eg `sampletable.xlsx`)
+- Raw data from instruments
 
-Or if the data is private or requires authentication provide a link to the website where the user can interactively download the file.
+Our assumption is that the data in here is too large to be checked in to git.  To make this data accessible to your end users you should add it to `data.list`
 

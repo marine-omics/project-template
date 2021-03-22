@@ -1,3 +1,7 @@
-proteinGroups.txt
-*.fastq
-*.gz
+hpc/
+raw_data/
+results/
+figures/
+*_cache/
+*.tgz
+.Rproj.user

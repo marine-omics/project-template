@@ -1,4 +1,3 @@
-# Intermediate Results
+# Final Results
 
-This directory contains intermediate files that are produced as part of an analysis.  These intermediate files should not be checked in to git but you may also place shell scripts or other code for intermediate file processing here.  Those shell scripts should be checked in.
-
+This directory contains outputs other than figures (ie tables) that you produce from your analysis.  For example you might produce a large table to be included as supplementary information for your paper. The RMarkdown file that produces this should write its result directly to this directory. 
