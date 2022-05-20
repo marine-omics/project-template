@@ -1,5 +1,11 @@
 # Project Template
 
+## Motivation
+
+One of the most important things in bioinformatics is staying organised.  This can be daunting because it involves managing code and data in a way that lets you get your day to day work done, while also ensuring that your project is reproducible and sharable with colleagues. 
+
+![img](figures/motivation.png)
+
 #### Adapt this template to your own project
 
 - Replace "project-template" with the name of your own project

@@ -1,11 +1,13 @@
 # Raw Data
 
-This directory is for analysis ready files that we treat as raw data for the purpose of R analysis.  
+This directory is for raw data that is not too large to be checked in to git.  Don't put anything larger than a few mb in here. 
 
 Examples of data that belongs here are;
 
 - Manually curated metadata about your samples (eg `sampletable.xlsx`)
-- Raw data from instruments
+- Small datasets (eg field or laboratory observations manually entered in a spreadsheet)
 
-Our assumption is that the data in here is too large to be checked in to git.  To make this data accessible to your end users you should add it to `data.list`
+Examples if data that doesn't belong here;
+
+- Raw data from instruments (put it in a subdirectory of hpc/)
 
