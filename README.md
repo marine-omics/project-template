@@ -4,7 +4,11 @@
 
 One of the most important things in bioinformatics is staying organised.  This can be daunting because it involves managing code and data in a way that lets you get your day to day work done, while also ensuring that your project is reproducible and sharable with colleagues. 
 
+To make matters worse your project often needs to live in multiple places.  The diagram below shows a typical setup. Some parts of your project will be things you want to share publicly, or at least with your collaborators.  This is best kept in a github repository.  Your day to day work is done on a personal computer of some kind and you will often need to run larger analyses (or store larger files) on a high performance computing system. 
+
 ![img](figures/motivation.png)
+
+The aim of this project template is to provide a framework for a workflow involving these three components. 
 
 #### Adapt this template to your own project
 
@@ -22,7 +26,7 @@ One of the most important things in bioinformatics is staying organised.  This c
 - Upload the resulting `data.tgz` file to a repository that will hold large data
 - Replace the download URL in the instructions below with an appropriate URL to access your data
 
-## Using this repository
+## Providing larger files via cloudstor
 
 This repository contains RMarkdown files and R code but does not contain raw data.  To obtain the data required to run these scripts you should do the following;
 
@@ -36,6 +40,7 @@ cd project-template
 wget 'https://cloudstor.aarnet.edu.au/plus/s/p4g9EM3IneCBOgm/download' -O data.tgz
 tar -zxvf data.tgz
 ```
+
 
 ### Project Outline
 
