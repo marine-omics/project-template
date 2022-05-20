@@ -6,3 +6,8 @@ Many projects require extensive processing of very large data files before an R 
 - Shell scripts or pipeline code used to process the raw data
 - README files documenting how to run the pipeline steps (perhaps showing the order of steps) and documenting any other commands that need to be run
 - You will almost certainly want to organise this into subdirectories within this folder
+
+
+## Other tips
+
+Keep the folder structure of your hpc folder identical on your PC and the HPC
