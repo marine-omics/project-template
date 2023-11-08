@@ -37,7 +37,7 @@ git clone https://github.com/marine-omics/project-template.git
 2. Download the raw data and unpack it from within the project repository.
 ```bash
 cd project-template
-wget 'https://cloudstor.aarnet.edu.au/plus/s/p4g9EM3IneCBOgm/download' -O data.tgz
+wget 'http://data.qld.edu.au/public/Q5999/marine-omics/project-template/data.tgz' -O data.tgz
 tar -zxvf data.tgz
 ```
 
